@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>Archives: 2017 | 恍惚的小屋</title>
+  <title>emmet语法简介 | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端开发 js web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="恍惚的小屋">
-<meta property="og:url" content="http://hunghoo.github.io/archives/2017/index.html">
+  <meta name="description" content="对于为一个前端程序员，emmet可以说是作为一个神器的存在，可以让我们的coding效率提高很多。所以我就整理了下常用的emmet使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="emmet语法简介">
+<meta property="og:url" content="http://hunghoo.github.io/2015/01/02/emmet语法简介/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
-<meta property="og:description" content="前端开发 js web">
+<meta property="og:description" content="对于为一个前端程序员，emmet可以说是作为一个神器的存在，可以让我们的coding效率提高很多。所以我就整理了下常用的emmet使用方法。">
+<meta property="og:updated_time" content="2017-02-04T15:46:08.025Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="恍惚的小屋">
-<meta name="twitter:description" content="前端开发 js web">
+<meta name="twitter:title" content="emmet语法简介">
+<meta name="twitter:description" content="对于为一个前端程序员，emmet可以说是作为一个神器的存在，可以让我们的coding效率提高很多。所以我就整理了下常用的emmet使用方法。">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
   
@@ -142,60 +143,231 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-emmet语法简介" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/04/nodeHttp服务器/" class="archive-article-date">
-  	<time datetime="2017-01-04T14:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/04/nodeHttp服务器/">nodeHttp服务器</a>
+    <h1 class="article-title" itemprop="name">
+      emmet语法简介
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2015/01/02/emmet语法简介/" class="archive-article-date">
+  	<time datetime="2015-01-02T07:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-01-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 对于为一个前端程序员，emmet可以说是作为一个神器的存在，可以让我们的coding效率提高很多。所以我就整理了下常用的emmet使用方法。<br><a id="more"></a></p>
+<h2 id="一-html"><a href="#一-html" class="headerlink" title="一 html"></a>一 html</h2><h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h3><ul>
+<li>如何快速搭建一个h5的结构，只需要一个命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">! + tab键 或者 html:5 + tab键</div></pre></td></tr></table></figure>
+<ul>
+<li>如果要构建xhtml或者严格类型文档<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">html:xt --&gt; 过度文档类型</div><div class="line">html:4s --&gt; 严格文档类型</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-添加类-id-文本和属性"><a href="#2-添加类-id-文本和属性" class="headerlink" title="2.添加类 id 文本和属性"></a>2.添加类 id 文本和属性</h3><ul>
+<li>输入 .类名 或者 #id 单击tab键，就可以生成 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class = &quot;classname&quot;&gt;&lt;/div&gt;或者&lt;div di=&quot;idname&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>默认生成div标签</p>
+<ul>
+<li>如果添加上标签名，就会生成标签名和相应的class和id<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg：</div><div class="line">    p.classname + tab --&gt;&lt;p class=&quot;classname&quot;&gt;&lt;/p&gt;</div><div class="line">    p#idname + tab --&gt; &lt;p id=&quot;idname&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>也可以连写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p#idname.classname + tab --&gt; &lt;p id=&quot;idname&quot; class=&quot;calssname&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>如何生成内容和属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p&#123;cont&#125; + tab --&gt; &lt;p&gt;cont&lt;/p&gt;</div><div class="line">a[href=&quot;#&quot;] + tab --&gt; &lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="嵌套方式"><a href="#嵌套方式" class="headerlink" title="嵌套方式"></a>嵌套方式</h3><ul>
+<li>来看例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p&gt;span + tab --&gt; &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">p+div + tab --&gt; &lt;p&gt;&lt;/p&gt; &lt;div&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><ul>
+<li>我们也可以通过嵌套和括号来生成代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(.classname&gt;h1)+(#idname+h2)--&gt;</div><div class="line">        &lt;div class=&quot;classname&quot;&gt;</div><div class="line">            &lt;h1&gt;&lt;/h1&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div id=&quot;idname&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;h2&gt;&lt;/h2&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="定义多个元素"><a href="#定义多个元素" class="headerlink" title="定义多个元素"></a>定义多个元素</h3><ul>
+<li>使用*生成多个元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ul&gt;li*3 -- &gt;</div><div class="line"></div><div class="line">        &lt;ul&gt;</div><div class="line">            &lt;li&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="定义多个带属性的元素"><a href="#定义多个带属性的元素" class="headerlink" title="定义多个带属性的元素"></a>定义多个带属性的元素</h3><ul>
+<li>使用$来生成序号<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ul&gt;li.classname$*3--&gt;</div><div class="line"></div><div class="line">       &lt;ul&gt;</div><div class="line">           &lt;li class=&quot;classname1&quot;&gt;&lt;/li&gt;</div><div class="line">           &lt;li class=&quot;classname2&quot;&gt;&lt;/li&gt;</div><div class="line">           &lt;li class=&quot;classname3&quot;&gt;&lt;/li&gt;</div><div class="line">       &lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="二-css快速写法"><a href="#二-css快速写法" class="headerlink" title="二 css快速写法"></a>二 css快速写法</h2><h3 id="1-值"><a href="#1-值" class="headerlink" title="1.值"></a>1.值</h3><ul>
+<li>大多数的属性默认生成单位是px,<ul>
+<li>不写就默认px</li>
+<li>e –&gt; em</li>
+<li>p –&gt; %<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">w100 --&gt; </div><div class="line">width:100px;</div><div class="line"></div><div class="line">w2e--&gt;</div><div class="line">width: 3em;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-附加属性"><a href="#2-附加属性" class="headerlink" title="2.附加属性"></a>2.附加属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@f+ -- &gt; </div><div class="line">   @font-face &#123;</div><div class="line">       font-family: &apos;FontName&apos;;</div><div class="line">       src: url(&apos;FileName.eot&apos;);</div><div class="line">       src: url(&apos;FileName.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;),</div><div class="line">            url(&apos;FileName.woff&apos;) format(&apos;woff&apos;),</div><div class="line">            url(&apos;FileName.ttf&apos;) format(&apos;truetype&apos;),</div><div class="line">            url(&apos;FileName.svg#FontName&apos;) format(&apos;svg&apos;);</div><div class="line">       font-style: normal;</div><div class="line">       font-weight: normal;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="3-添加兼容"><a href="#3-添加兼容" class="headerlink" title="3.添加兼容"></a>3.添加兼容</h3><ul>
+<li><p>-属性名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-display -- &gt;</div><div class="line"></div><div class="line">            -webkit-display: ;</div><div class="line">            -moz-display: ;</div><div class="line">            -ms-display: ;</div><div class="line">            -o-display: ;</div><div class="line">            display: ;</div></pre></td></tr></table></figure>
+</li>
+<li><p>emmet还有许多隐藏的快捷方式，常用的就是这么多<br>…..</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node服务器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">emmet</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2015/01/02/emmet语法简介/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/关于js性能优化的总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js性能优化的一点总结
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2014/04/02/百度搜索框案例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度搜索框案例</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="emmet语法简介" data-title="emmet语法简介" data-url="http://hunghoo.github.io/2015/01/02/emmet语法简介/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hunghoo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -218,8 +390,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
