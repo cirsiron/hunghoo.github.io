@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hunghoo.github.io/2016/09/09/面试题/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
 <meta property="og:description" content="前端知识点总结">
-<meta property="og:updated_time" content="2017-02-06T03:52:34.801Z">
+<meta property="og:updated_time" content="2017-02-09T08:37:18.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点整理">
 <meta name="twitter:description" content="前端知识点总结">
@@ -231,7 +231,7 @@
 <ul>
 <li>利用的主要是script标签可以获得不同域名上的内容</li>
 <li><p>js中: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//定义的回调函数</div><div class="line">function dosomething(data)&#123;</div><div class="line">    //处理数据代码</div><div class="line">&#125;</div><div class="line">&lt;script src=&quot;http://baidu.com?callback=dosomething&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//定义的回调函数</div><div class="line">function dosomething(data)&#123;</div><div class="line">    //处理数据代码</div><div class="line">&#125;</div><div class="line">&lt;script src=&quot;http://baidu.com?callback=dosomething&quot;&gt;&lt;/script&gt;  </div><div class="line"></div><div class="line">//注意：可以动态生成以上代码，实现跨域</div></pre></td></tr></table></figure>
 </li>
 <li><p>php中的代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    $callback = $_GET[&quot;callback&quot;];//得到回调函数名</div><div class="line">    $data = array(&quot;a&quot;,&quot;b&quot;);//要返回的数据</div><div class="line">    echo $callback.&apos;(&apos;. json_encode($data) .&apos;)&apos;;//输出</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
@@ -261,11 +261,165 @@
 </ul>
 </li>
 <li>js继承<ul>
-<li>组合继承。 也叫伪经典继承。 指的是将原型链和借用构造函数的技术组合到一起， 从而发挥二者之长。<br>思路： 使用原型链实现对原型属性属性和方法的继承， 通过借用构造函数来实现实例属性的继承。<br>优点： 既通过在原型上定义方法实现了函数复用， 又能保证每一个实例都有它自己的数组。<br>组合继承避免了原型链和借用构造函数的缺陷， 融合了他们的优点， 成为 JavaScript 中常用的继承模式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> // 定义一个动物类</div><div class="line">function Animal (name) &#123;</div><div class="line">  // 属性</div><div class="line">  this.name = name || &apos;Animal&apos;;</div><div class="line">  // 实例方法</div><div class="line">  this.sleep = function()&#123;</div><div class="line">    console.log(this.name + &apos;正在睡觉！&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">// 原型方法</div><div class="line">Animal.prototype.eat = function(food) &#123;</div><div class="line">  console.log(this.name + &apos;正在吃：&apos; + food);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>组合继承。 也叫伪经典继承。 指的是将原型链和借用构造函数的技术组合到一起， 从而发挥二者之长。<br>思路： 使用原型链实现对原型属性属性和方法的继承， 通过借用构造函数来实现实例属性的继承。<br>优点： 既通过在原型上定义方法实现了函数复用， 又能保证每一个实例都有它自己的数组。<br>组合继承避免了原型链和借用构造函数的缺陷， 融合了他们的优点， 成为 JavaScript 中常用的继承模式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> // 定义一个父类</div><div class="line">function Animal (name) &#123;</div><div class="line">  // 属性</div><div class="line">  this.name = name || &apos;Animal&apos;;</div><div class="line">  // 实例方法</div><div class="line">  this.sleep = function()&#123;</div><div class="line">    console.log(this.name + &apos;正在睡觉！&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">// 原型方法</div><div class="line">Animal.prototype.eat = function(food) &#123;</div><div class="line">  console.log(this.name + &apos;正在吃：&apos; + food);</div><div class="line">&#125;;</div><div class="line">//定义一个子类</div><div class="line">function Cat(name)&#123;</div><div class="line">  Animal.call(this);</div><div class="line">  this.name = name || &apos;Tom&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Cat.prototype = new Animal();</div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // false</div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-
+<p><strong> 此方法有一个问题会在原型上和实例上都生成属性方法</strong></p>
+<ol>
+<li>Cat.prototype = new Animal();//在原型对象上生成了属性方法</li>
+<li>var cat = new Cat();//在实例对象上又一次生成了相同的属性方法<br>SubType.prototype=new SuperType();//这样subType.prototype作为SuperType的实例，<br>SubType.prototype就拥有了SuperType 的实例属性，<br>这些实例属性(这里指的是SuperType的name,colors属性)可以被SubType的任意实例通过proto访问到。</li>
+</ol>
+<ul>
+<li><p>寄生组合式继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function Object(o)&#123;</div><div class="line">    function F()&#123;&#125;</div><div class="line">    F.prototype=o;</div><div class="line">    return new F();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function inheritPrototype(subType, superType) &#123;</div><div class="line">    var prototype = Object(superType.prototype);    //创建对象</div><div class="line">    prototype.constructor = subType;                //增强对象</div><div class="line">    subType.prototype = prototype;                  //指定对象</div><div class="line">&#125;</div><div class="line"></div><div class="line">两种情况的差异所在：</div><div class="line">组合继承，因为有实例属性存在，所以subType.protype就拥有了其实例属性。</div><div class="line">寄生组合继承，由于F()&#123;&#125;是空的，即是subType.protype不会拥有任何实例属性。</div></pre></td></tr></table></figure>
+</li>
+<li><p>常用字符串的操作方法：</p>
+<ul>
+<li>charAt();//返回指定索引位置处的字符。如果超出范围就返回空字符串</li>
+<li>slice();//返回字符串的片段</li>
+<li>substr();//返回一个从指定位置开始的指定长度的字符串</li>
+<li>substring();//返回指定位置的字符串</li>
+<li>indexOf();//返回第一次出现的字符串的位置</li>
+<li>lastIndexOf();//返回最后一次出现的字符串的位置</li>
+<li>search();//返回与正则匹配的第一个字符串的位置</li>
+<li>concat();返回连接后的字符串</li>
+<li>split();//将字符串按照指定的标识分割成数组，并返回</li>
+</ul>
+</li>
+<li><p>判断变量是否是数组</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function isArray(arr)&#123;</div><div class="line">    if(typeof Array.isArray === &quot;function&quot;)&#123;</div><div class="line">        return Array.isArray(arr);</div><div class="line">    &#125;else&#123;</div><div class="line">      return  Object.prototype.toString().call([]) === &quot;[object Array]&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>js 的异步加载有哪几种方法？</p>
+<ul>
+<li>方案一：<script>标签的 async=”async”属性。 HTML5 中新增的属性，Chrome、 FF、 IE9&amp;IE9+均支持（ IE6~8<br>不支持）。 此外， 这种方法不能保证脚本按顺序执行。</li>
+<li>方案二： <script>标签的 defer=”defer”属性。 兼容所有浏览器。 此外， 这种方法可以确保所有设置 defer 属<br>性的脚本按顺序执行。</li>
+</ul>
+</li>
+<li><p>列举浏览器对象模型 BOM 里常用的至少 4 个对象， 并列举 window 对象的常用方法至少 5 个？</p>
+<ul>
+<li>对象： Window document location screen history navigator<br>方法： Alert() confirm() prompt() open() close() </li>
+</ul>
+</li>
+<li><p>arguments对象</p>
+<ul>
+<li>arguments[]函数参数的数组</li>
+<li>函数的参数和其他属性</li>
+<li>arguments.callee</li>
+<li>arguments.length  —– arguments.callee.length 比较实参与形参的个数，多态的实现</li>
+</ul>
+<ul>
+<li>array 数组对象</li>
+</ul>
+<ul>
+<li>arr.length;</li>
+<li>arr.concat();</li>
+<li>arr.join(“–”);</li>
+<li>arr.push();</li>
+<li>arr.pop();</li>
+<li>arr.shift();</li>
+<li>arr.unshift();</li>
+<li>arr.toString();</li>
+<li>arr.reverse();</li>
+<li>arr.slice();</li>
+<li><p>arr.sort();</p>
+</li>
+<li><p>arr.map();</p>
+</li>
+<li>arr.forEach();</li>
+<li>arr.filter();</li>
+</ul>
+</li>
+<li><p>HTML5本地存储</p>
+<ul>
+<li>特性： <ol>
+<li>设置、读取方便</li>
+<li>只能存储字符串，需要将JSON.stringfy()编码后存储</li>
+<li>容量大，sessionStorage（4-5M）或者localStorage(20M);</li>
+</ol>
+</li>
+<li>sessionStorage<ul>
+<li>生命周期为关闭浏览器窗口之前</li>
+<li>在同一个窗口下数据可以共享</li>
+</ul>
+</li>
+<li>localStorage<ul>
+<li>永久生效，除非手动删除<br>+可以多窗口共享</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li>setItem(key,value);</li>
+<li>getItem(key);</li>
+<li>removeItem(key);</li>
+<li>clear();//清空所有存储内容</li>
+<li>key(n);//按索引来获取存储内容</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>js的事件流模型都有什么？如何阻止？<ol>
+<li>原始事件模型<ul>
+<li>eg：onclick, </li>
+</ul>
+</li>
+<li>DOM2事件类型<ul>
+<li>addEventListener(“mouseleave”,function(){},boolean);</li>
+<li>removeEventListener(“mouseleave”,callbackName,boolean);</li>
+</ul>
+</li>
+<li>IE模型<br>+　attachEvent(“on” + “mouseleave”,callbackName);<ul>
+<li>detachEvent(“on” + “mouseleave”,callbackName);</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>nth-of-type与nth-child区别</p>
+<ul>
+<li>ele:nth-of-type(n)是指父元素下第n个ele元素</li>
+<li>ele:nth-child(n)是指父元素下第n个元素且这个元素为ele，若不是，则选择失败。 </li>
+</ul>
+</li>
+<li><p>伪类和伪元素</p>
+<ul>
+<li><p>伪类：类，class是一个类，就类似class这样，表示一些元素的状态的，但是无须标识的分类。</p>
+<ol>
+<li>a:link a:visited a:hover a:active;</li>
+<li>结构型伪类选择器：:root()等同于<html> :not()-&gt;除某个元素之外的元素 empty target</li>
+<li>first-child last-child nth-child nth-last-child//注意是从1开始</li>
+<li>nth-of-type nth-last-of-type</li>
+</ol>
+</li>
+<li><p>伪元素:就是一个元素，类似p标签元素，等等，逻辑上存在，但是实际并不存在在文档树中。</p>
+<ol>
+<li>::first-line //某个元素的第一行文字的使用样式</li>
+<li>::first-letter//某个元素的文字中的首字母</li>
+<li>::before //在某个元素之前插入一些内容</li>
+<li>::after //在某个元素之后插入一些内容</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>性能优化：<ul>
+<li>网页内容：<ol>
+<li>减少http请求</li>
+<li>减少DNS查询次数</li>
+<li>缓存ajax</li>
+<li>延迟加载</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>如何使用svg<br>  +</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (!Modernizr.svg) &#123;</div><div class="line">    $(&quot;.logo img&quot;).attr(&quot;src&quot;, &quot;images/logo.png&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><img src="image.svg" onerror="this.onerror=null; this.src='image.png'"></li>
+</ul>
+</li>
+</ul>
+</script></li></ul></li></ul>
       
 
       
@@ -369,11 +523,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/04/nodeHttp服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/06/git知识点总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          nodeHttp服务器
+          git的知识点总结
         
       </div>
     </a>
@@ -523,6 +677,26 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js html css 前端 优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">node git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>js性能优化的一点总结 | 恍惚的小屋</title>
+  <title>前端性能优化的一点总结 | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="优化建议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js性能优化的一点总结">
+<meta property="og:title" content="前端性能优化的一点总结">
 <meta property="og:url" content="http://hunghoo.github.io/2016/04/09/关于js性能优化的总结/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
 <meta property="og:description" content="优化建议">
-<meta property="og:updated_time" content="2017-02-06T01:36:59.430Z">
+<meta property="og:updated_time" content="2017-02-09T08:41:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js性能优化的一点总结">
+<meta name="twitter:title" content="前端性能优化的一点总结">
 <meta name="twitter:description" content="优化建议">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js性能优化的一点总结
+      前端性能优化的一点总结
     </h1>
   
 
@@ -164,6 +164,40 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h3><a id="more"></a>
+<ul>
+<li>（ 1） 资源加载</li>
+</ul>
+<ol>
+<li>CSS 顶部， JS 底部</li>
+<li>CSS JS 文件压缩</li>
+<li>尽量使用图片使用精灵图， 字体图标</li>
+<li>图片加载可通过懒加载的方式。</li>
+<li>总之就是减少资源体积减少资源请求次数。</li>
+</ol>
+<ul>
+<li>（ 2） 代码性能<ul>
+<li>Css：</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>使用 CSS 缩写， 减少代码量；</li>
+<li>减少查询层级： 如.header .logo 要好过.header .top .logo；</li>
+<li>减少查询范围： 如.header&gt;li 要好过.header li；</li>
+<li>避免 TAG 标签与 CLASS 或 ID 并存： 如 a.top、 button#submit；</li>
+<li>删除重复的 CSS；<br>….</li>
+</ol>
+<ul>
+<li>Html：</li>
+</ul>
+<ol>
+<li>减少 DOM 节点： 加速页面渲染；</li>
+<li>正确的闭合标签： 如避免使用<div>， 浏览器会多一个将它解析成<div\></div\>的过程；</div></li>
+<li>减少页面重绘。 比如 给图片加上正确的宽高值： 这可以减少页面重绘，<br>……</li>
+</ol>
+<ul>
+<li>js</li>
+</ul>
 <ol>
 <li>对数组进行循环遍历时，可以先讲数组的长度进行缓存，将数组长度放入局部变量中，避免多次查询数组长度。</li>
 <li><p>尽量不要使用全局变量，因为全局的变量要比局部的变量访问速度慢，全局变量其实是window的对象成员，而局部变量是存储在函数的栈中。</p>
@@ -220,7 +254,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js html css 前端 优化</a>
         		</li>
       		
 		</ul>
@@ -300,8 +334,8 @@
     </a>
   
   
-    <a href="/2015/01/02/emmet语法简介/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">emmet语法简介</div>
+    <a href="/2015/04/01/百度搜索框案例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度搜索框案例</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +349,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于js性能优化的总结" data-title="js性能优化的一点总结" data-url="http://hunghoo.github.io/2016/04/09/关于js性能优化的总结/"></div>
+	<div class="ds-thread" data-thread-key="关于js性能优化的总结" data-title="前端性能优化的一点总结" data-url="http://hunghoo.github.io/2016/04/09/关于js性能优化的总结/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -444,6 +478,26 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js html css 前端 优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">node git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
             
             <div class="clearfix"></div>
