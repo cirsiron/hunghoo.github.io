@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>React系列学习6 | 恍惚的小屋</title>
+  <title>React表单 | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Component Life Cycle—组件生命周期">
+  <meta name="description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习6">
-<meta property="og:url" content="http://hunghoo.github.io/2016/03/23/React系列学习之06 组件生命周期/index.html">
+<meta property="og:title" content="React表单">
+<meta property="og:url" content="http://hunghoo.github.io/2016/04/02/react07受控表单和非受控表单/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
-<meta property="og:description" content="Component Life Cycle—组件生命周期">
-<meta property="og:updated_time" content="2017-02-13T13:52:36.000Z">
+<meta property="og:description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
+<meta property="og:updated_time" content="2017-02-14T01:06:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习6">
-<meta name="twitter:description" content="Component Life Cycle—组件生命周期">
+<meta name="twitter:title" content="React表单">
+<meta name="twitter:description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
   
@@ -143,43 +143,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React系列学习之06 组件生命周期" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react07受控表单和非受控表单" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React系列学习6
+      React表单
     </h1>
   
 
         
-        <a href="/2016/03/23/React系列学习之06 组件生命周期/" class="archive-article-date">
-  	<time datetime="2016-03-23T14:12:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-23</time>
+        <a href="/2016/04/02/react07受控表单和非受控表单/" class="archive-article-date">
+  	<time datetime="2016-04-02T04:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Component-Life-Cycle—组件生命周期"><a href="#Component-Life-Cycle—组件生命周期" class="headerlink" title="Component Life Cycle—组件生命周期"></a>Component Life Cycle—组件生命周期</h3><a id="more"></a>
-<p><strong> componentWillMount</strong> 在渲染前调用,在客户端也在服务端</p>
+        <h3 id="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的"><a href="#受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的" class="headerlink" title="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的."></a>受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.</h3><a id="more"></a>
 <blockquote>
-<p><code>一个组件绝对不可以自己修改自己的props</code></p>
-<ul>
-<li>只能在子组件或者组件树外调用setProps，一定不可以使用this.setProps,可以使用this.setStates<br><strong> componentDidMount</strong> 第一次渲染后执行，仅在客户端. 这是发起AJAX请求或者操作DOM或者更新state的地方。ajax需要写在这个地方。 这个方法也用来整合其他第三方JS框架或者一些延迟执行的函数，例如setTimeout和setInterval. 我们用它来更新state，这样我们可以触发其他生命周期函数.</li>
-</ul>
-<hr>
-<p><strong> componentWillReceiveProps</strong> 会被立即调用，当props被更新的时候.</p>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value="Hello!"/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p><strong> shouldComponentUpdate </strong> 应该返回一个布尔值. 它决定你的组件是否将要被更新，默认被设置为true. 如果你确定你的组件在state或props更新后不需要render， 那么你可以返回false。</p>
-<p><strong> componentWillUpdate</strong> 在组件更新之前调用;</p>
-<p><strong> componentDidUpdate</strong> 在组件完成更新后立即调用。在初始化时不会被调用。</p>
-<p><strong> componentWillUnmount</strong> 在组件从 DOM 中移除的时候立刻被调用。</p>
+<p>如果你想要改变这个值，就需要用到onChange事件。</p>
 <blockquote>
-<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="keyword">constructor</span>(props) &#123;</div><div class="line">      <span class="keyword">super</span>(props);</div><div class="line">		</div><div class="line">      <span class="keyword">this</span>.state = &#123;</div><div class="line">         <span class="attr">data</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">      <span class="comment">//this的指向绑定到App上</span></div><div class="line">      <span class="keyword">this</span>.setNewNumber = <span class="keyword">this</span>.setNewNumber.bind(<span class="keyword">this</span>)</div><div class="line">   &#125;;</div><div class="line"></div><div class="line">   setNewNumber() &#123;</div><div class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">data</span>: <span class="keyword">this</span>.state.data + <span class="number">1</span>&#125;)</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            //此处的this还是App</div><div class="line">            &lt;button onClick = &#123;this.setNewNumber&#125;&gt;INCREMENT&lt;/button&gt;</div><div class="line">            &lt;Content myNumber = &#123;this.state.data&#125;&gt;&lt;/Content&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">   componentWillMount() &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component WILL MOUNT!'</span>)</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   componentDidMount() &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component DID MOUNT!'</span>)</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   componentWillReceiveProps(newProps) &#123;    </div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component WILL RECIEVE PROPS!'</span>)</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   shouldComponentUpdate(newProps, newState) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   componentWillUpdate(nextProps, nextState) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component WILL UPDATE!'</span>);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   componentDidUpdate(prevProps, prevState) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component DID UPDATE!'</span>)</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   componentWillUnmount() &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Component WILL UNMOUNT!'</span>)</div><div class="line">   &#125;</div><div class="line">	</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h3&gt;&#123;this.props.myNumber&#125;&lt;/h3&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-<p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;ReactDOM.unmountComponentAtNode(<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));&#125;, <span class="number">10000</span>);</div></pre></td></tr></table></figure></p>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props, context) &#123;</div><div class="line">    <span class="keyword">super</span>(props, context);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">inputVal</span>: <span class="string">'hello'</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  handleChange(event) &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">inputVal</span>: event.target.value&#125;);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value=&#123;this.state.inputVal&#125; onChange=&#123;this.handleChange&#125;  /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的-这个defaultValue就像placefolder一样"><a href="#不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的-这个defaultValue就像placefolder一样" class="headerlink" title="不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的,这个defaultValue就像placefolder一样"></a>不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的,这个defaultValue就像placefolder一样</h1><blockquote>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value=&#123;null&#125;/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -271,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/23/React系列学习之06 组件生命周期/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/04/02/react07受控表单和非受控表单/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +278,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/04/02/React系列学习之07 受控表单和非受控表单/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/09/关于js性能优化的总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          React系列学习7
+          前端性能优化的一点总结
         
       </div>
     </a>
   
   
-    <a href="/2016/03/19/React系列学习之05 属性/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React系列学习5</div>
+    <a href="/2016/03/23/react06组件生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React组件生命周期</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -310,7 +303,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="React系列学习之06 组件生命周期" data-title="React系列学习6" data-url="http://hunghoo.github.io/2016/03/23/React系列学习之06 组件生命周期/"></div>
+	<div class="ds-thread" data-thread-key="react07受控表单和非受控表单" data-title="React表单" data-url="http://hunghoo.github.io/2016/04/02/react07受控表单和非受控表单/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

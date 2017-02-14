@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>React系列学习7 | 恍惚的小屋</title>
+  <title>React属性 | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
+  <meta name="description" content="使用属性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习7">
-<meta property="og:url" content="http://hunghoo.github.io/2016/04/02/React系列学习之07 受控表单和非受控表单/index.html">
+<meta property="og:title" content="React属性">
+<meta property="og:url" content="http://hunghoo.github.io/2016/03/19/react05属性/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
-<meta property="og:description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
-<meta property="og:updated_time" content="2017-02-13T13:52:32.000Z">
+<meta property="og:description" content="使用属性">
+<meta property="og:updated_time" content="2017-02-14T01:06:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习7">
-<meta name="twitter:description" content="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.">
+<meta name="twitter:title" content="React属性">
+<meta name="twitter:description" content="使用属性">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
   
@@ -143,36 +143,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React系列学习之07 受控表单和非受控表单" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react05属性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React系列学习7
+      React属性
     </h1>
   
 
         
-        <a href="/2016/04/02/React系列学习之07 受控表单和非受控表单/" class="archive-article-date">
-  	<time datetime="2016-04-02T04:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-02</time>
+        <a href="/2016/03/19/react05属性/" class="archive-article-date">
+  	<time datetime="2016-03-19T04:32:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的"><a href="#受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的" class="headerlink" title="受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的."></a>受控表单：设定了value值的input表单就是一个受控表单，此时的表单是不受你控制的.</h3><a id="more"></a>
+        <h3 id="使用属性"><a href="#使用属性" class="headerlink" title="使用属性"></a>使用属性</h3><a id="more"></a>
 <blockquote>
-<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value="Hello!"/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;this.props.headerProp&#125;&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;&#123;this.props.contentProp&#125;&lt;/h2&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+<p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App headerProp = "Header from props..." contentProp = "Content</div><div class="line">   from props..."/&gt;, document.getElementById('app'));</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>如果你想要改变这个值，就需要用到onChange事件。</p>
-<blockquote>
-<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props, context) &#123;</div><div class="line">    <span class="keyword">super</span>(props, context);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">inputVal</span>: <span class="string">'hello'</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  handleChange(event) &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">inputVal</span>: event.target.value&#125;);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value=&#123;this.state.inputVal&#125; onChange=&#123;this.handleChange&#125;  /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
+<h3 id="默认属性"><a href="#默认属性" class="headerlink" title="默认属性"></a>默认属性</h3><blockquote>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;this.props.headerProp&#125;&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;&#123;this.props.contentProp&#125;&lt;/h2&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">App.defaultProps = &#123;</div><div class="line">   <span class="attr">headerProp</span>: <span class="string">"Header from props..."</span>,</div><div class="line">   <span class="attr">contentProp</span>:<span class="string">"Content from props..."</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+<p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h1 id="不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的-这个defaultValue就像placefolder一样"><a href="#不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的-这个defaultValue就像placefolder一样" class="headerlink" title="不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的,这个defaultValue就像placefolder一样"></a>不受控表单：value没有值或者值设为null的input是一个不受控组件。用户的任何输入都会反映到输入框中，可以使用defaultValue来给一个默认值，这个defaultValue和value是不一样的,这个defaultValue就像placefolder一样</h1><blockquote>
-<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value=&#123;null&#125;/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
+<h3 id="State和Props"><a href="#State和Props" class="headerlink" title="State和Props"></a>State和Props</h3><blockquote>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   <span class="keyword">constructor</span>(props) &#123;</div><div class="line">      <span class="keyword">super</span>(props);</div><div class="line">		</div><div class="line">      <span class="keyword">this</span>.state = &#123;</div><div class="line">         <span class="attr">header</span>: <span class="string">"Header from props..."</span>,</div><div class="line">         <span class="string">"content"</span>: <span class="string">"Content from props..."</span></div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">	</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;Header headerProp = &#123;this.state.header&#125;/&gt;</div><div class="line">            &lt;Content contentProp = &#123;this.state.content&#125;/&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Header extends React.Component &#123;</div><div class="line">   render() &#123;</div><div class="line">      return (</div><div class="line">         &lt;div&gt;</div><div class="line">            //先执行app然后执行这个组件，此时可以读取到，这个属性值</div><div class="line">            &lt;h1&gt;&#123;this.props.headerProp&#125;&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Content extends React.Component &#123;</div><div class="line">   render() &#123;</div><div class="line">      return (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h2&gt;&#123;this.props.contentProp&#125;&lt;/h2&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
+<p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));</div></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -264,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/04/02/React系列学习之07 受控表单和非受控表单/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/19/react05属性/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +280,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/04/09/关于js性能优化的总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/23/react06组件生命周期/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          前端性能优化的一点总结
+          React组件生命周期
         
       </div>
     </a>
   
   
-    <a href="/2016/03/23/React系列学习之06 组件生命周期/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React系列学习6</div>
+    <a href="/2016/03/15/react04状态/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React状态</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -303,7 +305,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="React系列学习之07 受控表单和非受控表单" data-title="React系列学习7" data-url="http://hunghoo.github.io/2016/04/02/React系列学习之07 受控表单和非受控表单/"></div>
+	<div class="ds-thread" data-thread-key="react05属性" data-title="React属性" data-url="http://hunghoo.github.io/2016/03/19/react05属性/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

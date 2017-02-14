@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>React系列学习2 | 恍惚的小屋</title>
+  <title>React状态 | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSX">
+  <meta name="description" content="State">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习2">
-<meta property="og:url" content="http://hunghoo.github.io/2016/03/05/React系列学习之02 JSX/index.html">
+<meta property="og:title" content="React状态">
+<meta property="og:url" content="http://hunghoo.github.io/2016/03/15/react04状态/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
-<meta property="og:description" content="JSX">
-<meta property="og:updated_time" content="2017-02-13T13:52:54.205Z">
+<meta property="og:description" content="State">
+<meta property="og:updated_time" content="2017-02-14T01:06:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习2">
-<meta name="twitter:description" content="JSX">
+<meta name="twitter:title" content="React状态">
+<meta name="twitter:description" content="State">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
   
@@ -143,61 +143,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React系列学习之02 JSX" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react04状态" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React系列学习2
+      React状态
     </h1>
   
 
         
-        <a href="/2016/03/05/React系列学习之02 JSX/" class="archive-article-date">
-  	<time datetime="2016-03-05T06:22:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-05</time>
+        <a href="/2016/03/15/react04状态/" class="archive-article-date">
+  	<time datetime="2016-03-15T01:12:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            Hello World!!!</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+        <h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><a id="more"></a>
+<p>state是数据的来源，你应该尽量使state保持简单，并且最小化你状态组件的数量。相反，如果是个组件需要从state中获取数据，你应该新建一个容器组件来保存所有的状态</p>
 <blockquote>
-<p>嵌套元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;Content&lt;/h2&gt;</div><div class="line">            &lt;p&gt;This is the content!!!&lt;/p&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>注意return中间必须用一个容器包裹起来</li>
-</ul>
-<blockquote>
-<p>属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;Content&lt;/h2&gt;</div><div class="line">            &lt;p data-myattr = "somevalue"&gt;This is the content!!!&lt;/p&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-<p>Javascript表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;1+1&#125;&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>注意在JSX中不能使用if else，但是可以使用三元表达式<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> i = <span class="number">1</span>;</div><div class="line"></div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;i == 1 ? 'True!' : 'False'&#125;&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>样式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> myStyle = &#123;</div><div class="line">         <span class="attr">fontSize</span>: <span class="number">100</span>,</div><div class="line">         <span class="attr">color</span>: <span class="string">'#FF0000'</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1 style = &#123;myStyle&#125;&gt;Header&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>注意React会自动在number数值后面加上px；</li>
-</ul>
-<blockquote>
-<p>注释<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &#123;//End of the line Comment...&#125;</div><div class="line">            &#123;/*Multi line comment...*/&#125;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>注释<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">var</span> myStyle = &#123;</div><div class="line">      <span class="attr">fontSize</span>: <span class="number">100</span>,</div><div class="line">      <span class="attr">color</span>: <span class="string">'blue'</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        Hello world</div><div class="line">        &#123;</div><div class="line">          //这是单行注释</div><div class="line">          //这是单行注释</div><div class="line">          //这是单行注释</div><div class="line">        &#125;</div><div class="line">        &#123;</div><div class="line">          /*</div><div class="line">            多行注释</div><div class="line">            多行注释</div><div class="line">            多行注释</div><div class="line">          */</div><div class="line">        &#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>命名约定</p>
-<ul>
-<li>组件名字首字母大写</li>
-<li>用className和htmlFor替换class和for</li>
-</ul>
+<p>App.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   <span class="keyword">constructor</span>(props) &#123;</div><div class="line">      <span class="keyword">super</span>(props);</div><div class="line">		</div><div class="line">      <span class="keyword">this</span>.state = &#123;</div><div class="line">         <span class="attr">header</span>: <span class="string">"Header from state..."</span>,</div><div class="line">         <span class="string">"content"</span>: <span class="string">"Content from state..."</span></div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">	</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;this.state.header&#125;&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;&#123;this.state.content&#125;&lt;/h2&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+<p>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span>;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -289,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/05/React系列学习之02 JSX/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/15/react04状态/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +273,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/03/12/React系列学习之03 组件/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/19/react05属性/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          React系列学习3
+          React属性
         
       </div>
     </a>
   
   
-    <a href="/2016/03/03/React系列学习之01 环境配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React系列学习1</div>
+    <a href="/2016/03/12/react03组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React系列学习3</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -328,7 +298,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="React系列学习之02 JSX" data-title="React系列学习2" data-url="http://hunghoo.github.io/2016/03/05/React系列学习之02 JSX/"></div>
+	<div class="ds-thread" data-thread-key="react04状态" data-title="React状态" data-url="http://hunghoo.github.io/2016/03/15/react04状态/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

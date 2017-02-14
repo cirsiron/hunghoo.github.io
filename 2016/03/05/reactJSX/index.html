@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunghoo.github.io">
-  <title>React系列学习1 | 恍惚的小屋</title>
+  <title>ReactJSX | 恍惚的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装全局包">
+  <meta name="description" content="JSX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习1">
-<meta property="og:url" content="http://hunghoo.github.io/2016/03/03/React系列学习之01 环境配置/index.html">
+<meta property="og:title" content="ReactJSX">
+<meta property="og:url" content="http://hunghoo.github.io/2016/03/05/reactJSX/index.html">
 <meta property="og:site_name" content="恍惚的小屋">
-<meta property="og:description" content="安装全局包">
-<meta property="og:updated_time" content="2017-02-13T13:52:57.000Z">
+<meta property="og:description" content="JSX">
+<meta property="og:updated_time" content="2017-02-14T01:06:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习1">
-<meta name="twitter:description" content="安装全局包">
+<meta name="twitter:title" content="ReactJSX">
+<meta name="twitter:description" content="JSX">
   
     <link rel="alternative" href="/atom.xml" title="恍惚的小屋" type="application/atom+xml">
   
@@ -143,39 +143,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React系列学习之01 环境配置" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-reactJSX" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React系列学习1
+      ReactJSX
     </h1>
   
 
         
-        <a href="/2016/03/03/React系列学习之01 环境配置/" class="archive-article-date">
-  	<time datetime="2016-03-03T06:22:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-03</time>
+        <a href="/2016/03/05/reactJSX/" class="archive-article-date">
+  	<time datetime="2016-03-05T06:22:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装全局包"><a href="#安装全局包" class="headerlink" title="安装全局包"></a>安装全局包</h3><a id="more"></a>
-<p><code>npm install -g babel</code><br><code>npm install -g babel-cli</code></p>
-<h3 id="创建根目录"><a href="#创建根目录" class="headerlink" title="创建根目录"></a>创建根目录</h3><p><code>C:\Users\username\Desktop&gt;mkdir reactApp</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm init</code></p>
-<h3 id="安装依赖和插件"><a href="#安装依赖和插件" class="headerlink" title="安装依赖和插件"></a>安装依赖和插件</h3><p><code>C:\Users\username&gt;npm install webpack --save</code><br><code>C:\Users\username&gt;npm install webpack-dev-server --save</code><br><code>:\Users\username\Desktop\reactApp&gt;npm install react --save</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm install react-dom --save</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm install babel-core</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm install babel-loader</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm install babel-preset-react</code><br><code>C:\Users\username\Desktop\reactApp&gt;npm install babel-preset-es2015</code></p>
-<h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><p><code>C:\Users\username\Desktop\reactApp&gt;新建 index.html</code><br><code>C:\Users\username\Desktop\reactApp&gt;新建 App.jsx</code><br><code>C:\Users\username\Desktop\reactApp&gt;新建 main.js</code><br><code>C:\Users\username\Desktop\reactApp&gt;新建 webpack.config.js</code></p>
-<h3 id="设置编译器，服务器和加载器"><a href="#设置编译器，服务器和加载器" class="headerlink" title="设置编译器，服务器和加载器"></a>设置编译器，服务器和加载器</h3><blockquote>
-<p>webpack.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var config = &#123;</div><div class="line">   entry: &apos;./main.js&apos;,</div><div class="line">	</div><div class="line">   output: &#123;</div><div class="line">      path:&apos;./&apos;,</div><div class="line">      filename: &apos;index.js&apos;,</div><div class="line">   &#125;,</div><div class="line">	</div><div class="line">   devServer: &#123;</div><div class="line">      inline: true,</div><div class="line">      port: 8080</div><div class="line">   &#125;,</div><div class="line">	</div><div class="line">   module: &#123;</div><div class="line">      loaders: [</div><div class="line">         &#123;</div><div class="line">            test: /\.jsx?$/,</div><div class="line">            exclude: /node_modules/,</div><div class="line">            loader: &apos;babel&apos;,</div><div class="line">				</div><div class="line">            query: &#123;</div><div class="line">               presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">            &#125;</div><div class="line">         &#125;</div><div class="line">      ]</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = config;</div></pre></td></tr></table></figure></p>
-<p>在package.json文件中的scripts中添加<code>&quot;start&quot;: &quot;webpack-dev-server --hot&quot;</code></p>
-<p>index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang = &quot;en&quot;&gt;</div><div class="line"></div><div class="line">   &lt;head&gt;</div><div class="line">      &lt;meta charset = &quot;UTF-8&quot;&gt;</div><div class="line">      &lt;title&gt;React App&lt;/title&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line"></div><div class="line">   &lt;body&gt;</div><div class="line">      &lt;div id = &quot;app&quot;&gt;&lt;/div&gt;</div><div class="line">      &lt;script src = &quot;index.js&quot;&gt;&lt;/script&gt;</div><div class="line">   &lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>App.jsx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">class App extends React.Component &#123;</div><div class="line">   render() &#123;</div><div class="line">      return (</div><div class="line">         &lt;div&gt;</div><div class="line">            Hello World!!!</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure></p>
-<p>main.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import ReactDOM from &apos;react-dom&apos;;</div><div class="line">import App from &apos;./App.jsx&apos;;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;App /&gt;, document.getElementById(&apos;app&apos;));</div></pre></td></tr></table></figure></p>
+        <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            Hello World!!!</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>嵌套元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;Content&lt;/h2&gt;</div><div class="line">            &lt;p&gt;This is the content!!!&lt;/p&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="开启服务器"><a href="#开启服务器" class="headerlink" title="开启服务器"></a>开启服务器</h3><p><code>C:\Users\username\Desktop\reactApp&gt;npm start</code></p>
+<ul>
+<li>注意return中间必须用一个容器包裹起来</li>
+</ul>
+<blockquote>
+<p>属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &lt;h2&gt;Content&lt;/h2&gt;</div><div class="line">            &lt;p data-myattr = "somevalue"&gt;This is the content!!!&lt;/p&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+<p>Javascript表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;1+1&#125;&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>注意在JSX中不能使用if else，但是可以使用三元表达式<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> i = <span class="number">1</span>;</div><div class="line"></div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;i == 1 ? 'True!' : 'False'&#125;&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>样式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> myStyle = &#123;</div><div class="line">         <span class="attr">fontSize</span>: <span class="number">100</span>,</div><div class="line">         <span class="attr">color</span>: <span class="string">'#FF0000'</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1 style = &#123;myStyle&#125;&gt;Header&lt;/h1&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>注意React会自动在number数值后面加上px；</li>
+</ul>
+<blockquote>
+<p>注释<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">   render() &#123;</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">         &lt;div&gt;</div><div class="line">            &lt;h1&gt;Header&lt;/h1&gt;</div><div class="line">            &#123;//End of the line Comment...&#125;</div><div class="line">            &#123;/*Multi line comment...*/&#125;</div><div class="line">         &lt;/div&gt;</div><div class="line">      );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>注释<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">var</span> myStyle = &#123;</div><div class="line">      <span class="attr">fontSize</span>: <span class="number">100</span>,</div><div class="line">      <span class="attr">color</span>: <span class="string">'blue'</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        Hello world</div><div class="line">        &#123;</div><div class="line">          //这是单行注释</div><div class="line">          //这是单行注释</div><div class="line">          //这是单行注释</div><div class="line">        &#125;</div><div class="line">        &#123;</div><div class="line">          /*</div><div class="line">            多行注释</div><div class="line">            多行注释</div><div class="line">            多行注释</div><div class="line">          */</div><div class="line">        &#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>命名约定</p>
+<ul>
+<li>组件名字首字母大写</li>
+<li>用className和htmlFor替换class和for</li>
+</ul>
+</blockquote>
 
       
 
@@ -266,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/03/React系列学习之01 环境配置/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunghoo.github.io/2016/03/05/reactJSX/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/03/05/React系列学习之02 JSX/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/12/react03组件/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          React系列学习2
+          React系列学习3
         
       </div>
     </a>
   
   
-    <a href="/2016/03/02/设计模式之开闭原则/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设计模式之开闭原则</div>
+    <a href="/2016/03/03/react环境配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React环境配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -305,7 +328,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="React系列学习之01 环境配置" data-title="React系列学习1" data-url="http://hunghoo.github.io/2016/03/03/React系列学习之01 环境配置/"></div>
+	<div class="ds-thread" data-thread-key="reactJSX" data-title="ReactJSX" data-url="http://hunghoo.github.io/2016/03/05/reactJSX/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
